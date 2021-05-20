@@ -5,33 +5,45 @@
  */
 package com.mycompany.user.pojo;
 
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.Table;
+import javax.transaction.Transactional;
+
 /**
  *
  * @author vasee
  */
+@Entity
+@Table(name = "userdetails")
+@Transactional
 public class User {
-    private String name;
-    private int id;
-    private String phone;
+	
     
-	public String getName() {
-		return name;
+
+    @Id
+    private String username;
+	private String password;
+	public User() {
+		
 	}
-	public void setName(String name) {
-		this.name = name;
+	public User(String username, String password) {
+		super();
+		this.username = username;
+		this.password = password;
 	}
-	public int getId() {
-		return id;
+	public String getUsername() {
+		return username;
 	}
-	public void setId(int id) {
-		this.id = id;
+	public void setUsername(String username) {
+		this.username = username;
 	}
-	public String getPhone() {
-		return phone;
+	public String getPassword() {
+		return password;
 	}
-	public void setPhone(String phone) {
-		this.phone = phone;
+	public void setPassword(String password) {
+		this.password = password;
 	}
-    
+ 
     
 }
